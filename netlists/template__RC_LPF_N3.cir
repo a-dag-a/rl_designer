@@ -1,0 +1,33 @@
+* 3rd Order Lowpass RC Filter
+
+* Define parameters
+.param param__R1 = 1k
+.param param__R2 = 1k
+.param param__R3 = 1k
+.param param__C1 = 1u
+.param param__C2 = 1u
+.param param__C3 = 1u
+
+* Voltage source
+V1 n1 0 DC 0 AC 1
+
+* Resistor-Capacitor network
+R1 n1 n2 {param__R1}
+C1 n2 0 {param__C1}
+
+R2 n2 n3 {param__R2}
+C2 n3 0 {param__C2}
+
+R3 n3 n4 {param__R3}
+C3 n4 0 {param__C3}
+
+* Output node
+Rload n4 0 1Meg
+
+* AC analysis
+.ac dec 10 1 1Meg
+
+* Print AC analysis results
+.print ac v(n4)
+
+.end
