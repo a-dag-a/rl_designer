@@ -1,9 +1,11 @@
 - [ ] Should the agent create a small signal circuit first?
 - [ ] A second module will do 'synthesis' to convert the small-signal paramaters into actual transistor sizes
 
-- Setup a shortcut to the ngspice executable in the top folder
 
-- Execute with ngspice `.\ngspice.exe.lnk -b $pwd\netlists\template__CS_Amp.cir`
+- Execute with ngspice 
+Linux: `ngspice -b netlists\template__CS_Amp.cir`
+- In Windows (if we do not want to add to path), setup a shortcut to the ngspice executable in the top folder
+Windows: `.\ngspice.exe.lnk -b $pwd\netlists\template__CS_Amp.cir`
 
 - Add a run description comment at the first line of the netlist template
 ----------------------------------------------------
