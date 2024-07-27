@@ -17,17 +17,20 @@ C1 n2 0 {param__C1}
 
 R2 n2 n3 {param__R2}
 C2 n3 0 {param__C2}
-
-R3 n3 n4 {param__R3}
-C3 n4 0 {param__C3}
-
+* 
+* R3 n3 n4 {param__R3}
+* C3 n4 0 {param__C3}
+* 
 * Output node
-Rload n4 0 1Meg
+* Rload n4 0 1Meg
+
+* Output probe/load resistor
+R100 n3 out 0
 
 * AC analysis
-.ac dec 10 1 1Meg
+* .ac dec 10 1 1Meg
 
 * Print AC analysis results
-.print ac v(n4)
+* .print ac v(n4)
 
 .end
