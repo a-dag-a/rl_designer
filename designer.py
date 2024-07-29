@@ -62,33 +62,35 @@ command_string = f'ngspice -b new_netlist.cir'
 import os
 os.system(command_string)
 
-
 # Load data
 import numpy as np
+import matplotlib.pyplot as plt
 data = np.loadtxt('results/out.dat')
 f = data[:,0]
 V = data[:,1]+1j*data[:,2]
-import matplotlib.pyplot as plt
 plt.plot(np.log10(f),20*np.log10(abs(V)))
+plt.grid()
 plt.show()
 
+# Test target
 V_ideal = 1/(2*np.pi*10e-3)
 
 def computePenalty(V):
     '''Compute the MSE against the ideal response'''
-    # ideal transfer fcuntion
+    # ideal transfer function
     V_ideal = 1/(2*np.pi*10e-3)
 
     # get mean square error
     mse = np.mean(abs(V_ideal-V)**2)
-    return mse 
+    return mse
+
+
+
+
+
+
 
 # Can we just use backpropagation to guide the bot?
-
-
-
-
-
 
 
 # Optimizing even a large cascade of two ports 

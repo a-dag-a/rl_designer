@@ -6,6 +6,9 @@ class CustomEnv(gymnasium.Env):
     def __init__(self):
         super(CustomEnv, self).__init__()
 
+        # Actions are to change the values of the elements in the paramList 
+
+
         # Define action and observation space
         self.action_space = spaces.Discrete(5)  # 5 discrete actions
         self.observation_space = spaces.Box(low=0, high=100, shape=(1,), dtype=np.float32)  # Single continuous observation
